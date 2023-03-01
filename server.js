@@ -1,11 +1,15 @@
-const e = require('express');
-const app = e();
-const port = 8081;
+const express = require('express');
+const path = require('path');
+const router = express.Router();
 
-app.get('/', (req, res)) {
-    res.send("Test");
-}
+const app = express();
+const port = process.env.port || 3000;
 
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname + '/views/index.html'));
+});
+
+app.use('/', router);
 app.listen(port, () => {
-    console.log("Running on port 8081");
-})
+    console.log('Running on port ' + port);
+});
