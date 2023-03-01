@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 });
 
 app.use('/', router);
+app.use('/static', express.static(path.join(__dirname + 'static')));
 app.listen(port, () => {
     console.log('Running on port ' + port);
 });
