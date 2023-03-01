@@ -1,0 +1,23 @@
+{
+  "name": "the-gears-publication-web",
+  "version": "1.0.0",
+  "description": "The Gears Publication - Web Portal",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinejay01/the-gears-publication-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justinejay01/the-gears-publication-web/issues"
+  },
+  "homepage": "https://github.com/justinejay01/the-gears-publication-web#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
