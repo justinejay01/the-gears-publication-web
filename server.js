@@ -12,6 +12,10 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
+router.get('/sample', (req, res) => {
+    res.sendFile(path.join(__dirname + '/views/sample.html'));
+})
+
 app.use('/', router);
 
 app.listen(port, () => {

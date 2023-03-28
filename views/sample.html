@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light align-items-center justify-content-center">
+                    <h1 class="navbar-brand">Justine Jay Olivar</h1>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light align-items-center justify-content-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#arithmetic" class="btn btn-primary m-1">Arithmetic Operation</a></li>
+                        <li class="nav-item"><a href="#grade" class="btn btn-primary m-1">Grade Computation</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                Enter Num1: <br/>
+                <input class="form-control" type="number" name="" id="num1"> <br />
+                Enter Num2: <br/>
+                <input class="form-control" type="number" name="" id="num2"> <br />
+                <button class="btn btn-success form-control" onclick="getCompute();">Compute!</button>
+            </div>
+            <div class="col">
+                <h4>Addition: <h3 id="add"></h3></h4>
+                <h4>Subtraction: <h3 id="sub"></h3></h4>
+                <h4>Multiplication: <h3 id="mult"></h3></h4>
+                <h4>Division: <h3 id="div"></h3></h4>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                Attendance: <br/>
+                <input class="form-control" type="number" name="" id="att"> <br />
+                Seatwork: <br/>
+                <input class="form-control" type="number" name="" id="seat"> <br />
+                Quiz: <br/>
+                <input class="form-control" type="number" name="" id="quiz"> <br />
+                Exam: <br/>
+                <input class="form-control" type="number" name="" id="exam"> <br />
+                <button class="btn btn-success form-control" onclick="getGrade();">Compute!</button>
+            </div>
+            <div class="col">
+                Total Grade: <br />
+                <h3 id="total"></h3>
+                Grade: <br />
+                <h3 id="grade"></h3>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
