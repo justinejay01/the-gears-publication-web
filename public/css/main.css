@@ -20,7 +20,7 @@
 /* Colors */
 :root {
   --color-default: #000000;
-  --color-primary: #ffffff;
+  --color-primary: #F7F7F7;
   --color-secondary: #351A05;
 }
 
@@ -54,6 +54,110 @@ h4,
 h5,
 h6 {
   font-family: var(--font-primary);
+}
+
+.color-orange {
+  color: #F5AA4F; 
+}
+
+.color-maroon {
+  color: #7A0801; 
+}
+
+/*btn-orange*/
+
+.btn-orange { 
+  color: #ffffff; 
+  background-color: #F5941F; 
+  border-color: #F5AA4F; 
+} 
+ 
+.btn-orange:hover, 
+.btn-orange:focus, 
+.btn-orange:active, 
+.btn-orange.active, 
+.open .dropdown-toggle.btn-orange { 
+  color: #ffffff; 
+  background-color: #F5941F; 
+  border-color: #F5AA4F; 
+} 
+ 
+.btn-orange:active, 
+.btn-orange.active, 
+.open .dropdown-toggle.btn-orange { 
+  background-image: none; 
+} 
+ 
+.btn-orange.disabled, 
+.btn-orange[disabled], 
+fieldset[disabled] .btn-orange, 
+.btn-orange.disabled:hover, 
+.btn-orange[disabled]:hover, 
+fieldset[disabled] .btn-orange:hover, 
+.btn-orange.disabled:focus, 
+.btn-orange[disabled]:focus, 
+fieldset[disabled] .btn-orange:focus, 
+.btn-orange.disabled:active, 
+.btn-orange[disabled]:active, 
+fieldset[disabled] .btn-orange:active, 
+.btn-orange.disabled.active, 
+.btn-orange[disabled].active, 
+fieldset[disabled] .btn-orange.active { 
+  background-color: #F5941F; 
+  border-color: #F5AA4F; 
+} 
+ 
+.btn-orange .badge { 
+  color: #F5941F; 
+  background-color: #ffffff; 
+}
+
+/* btn-maroon */
+
+.btn-maroon { 
+  color: #ffffff; 
+  background-color: #7A0801; 
+  border-color: #A1130B; 
+} 
+ 
+.btn-maroon:hover, 
+.btn-maroon:focus, 
+.btn-maroon:active, 
+.btn-maroon.active, 
+.open .dropdown-toggle.btn-maroon { 
+  color: #ffffff; 
+  background-color: #7A0801; 
+  border-color: #A1130B; 
+} 
+ 
+.btn-maroon:active, 
+.btn-maroon.active, 
+.open .dropdown-toggle.btn-maroon { 
+  background-image: none; 
+} 
+ 
+.btn-maroon.disabled, 
+.btn-maroon[disabled], 
+fieldset[disabled] .btn-maroon, 
+.btn-maroon.disabled:hover, 
+.btn-maroon[disabled]:hover, 
+fieldset[disabled] .btn-maroon:hover, 
+.btn-maroon.disabled:focus, 
+.btn-maroon[disabled]:focus, 
+fieldset[disabled] .btn-maroon:focus, 
+.btn-maroon.disabled:active, 
+.btn-maroon[disabled]:active, 
+fieldset[disabled] .btn-maroon:active, 
+.btn-maroon.disabled.active, 
+.btn-maroon[disabled].active, 
+fieldset[disabled] .btn-maroon.active { 
+  background-color: #7A0801; 
+  border-color: #A1130B; 
+} 
+ 
+.btn-maroon .badge { 
+  color: #7A0801; 
+  background-color: #ffffff; 
 }
 
 /*--------------------------------------------------------------
@@ -137,7 +241,7 @@ section {
 }
 
 .breadcrumbs nav ol a {
-  color: var(--color-primary);
+  color: #F5941F;
   transition: 0.3s;
 }
 
@@ -308,16 +412,15 @@ section {
   margin-right: 6px;
 }
 
-.header .logo h1 {
-  font-size: 30px;
+.header .logo h3 {
   margin: 0;
   font-weight: 600;
   letter-spacing: 0.8px;
-  color: #000000;
+  color: #F5941F;
   font-family: var(--font-primary);
 }
 
-.header .logo h1 span {
+.header .logo h3 span {
   color: #f96f59;
 }
 
@@ -347,6 +450,10 @@ section {
 
   .navbar li {
     position: relative;
+  }
+
+  .navbar li a {
+    color:#000
   }
 
   .navbar>ul>li {
@@ -400,7 +507,7 @@ section {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #fff;
+    color: #F5941F;
   }
 
   .navbar .dropdown ul {
@@ -413,7 +520,7 @@ section {
     z-index: 99;
     opacity: 0;
     visibility: hidden;
-    background: #fff;
+    background: #000000;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
     transition: 0.3s;
     border-radius: 4px;
@@ -1880,15 +1987,14 @@ section {
   }
 }
 
-.hero h2 {
-  font-size: 48px;
+.hero h4 {
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #fff;
 }
 
 .hero p {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   font-weight: 400;
   margin-bottom: 30px;
 }
@@ -1902,7 +2008,7 @@ section {
   padding: 14px 40px;
   border-radius: 50px;
   transition: 0.3s;
-  color: #fff;
+  color: #000000;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -1916,12 +2022,12 @@ section {
   font-size: 16px;
   transition: 0.5s;
   margin-left: 25px;
-  color: #fff;
+  color: #000000;
   font-weight: 600;
 }
 
 .hero .btn-watch-video i {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   font-size: 32px;
   transition: 0.3s;
   line-height: 0;
@@ -1929,7 +2035,7 @@ section {
 }
 
 .hero .btn-watch-video:hover i {
-  color: #fff;
+  color: #000000;
 }
 
 @media (max-width: 640px) {
@@ -1963,7 +2069,7 @@ section {
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: #008d7d;
+  background: #F5941F;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -1995,7 +2101,7 @@ section {
 }
 
 .hero .icon-box:hover {
-  background: #009786;
+  background: #7A0801;
 }
 
 .hero .icon-box:hover .title a,
@@ -2003,6 +2109,18 @@ section {
   color: #fff;
 }
 
+/* Featured News */
+
+#featured-news {
+  background-color: #ffffff;
+}
+
+
+/* Featured Events */
+
+#featured-events {
+  background-color: #F7F7F7;
+}
 /*--------------------------------------------------------------
 # Blog
 --------------------------------------------------------------*/
@@ -2032,9 +2150,14 @@ section {
   justify-content: center;
 }
 
-.blog .blog-pagination li.active,
+.blog .blog-pagination li.active {
+  background: #F5941F;
+  color: #fff;
+}
+
+
 .blog .blog-pagination li:hover {
-  background: var(--color-primary);
+  background: #7A0801;
   color: #fff;
 }
 
@@ -2074,12 +2197,12 @@ section {
 }
 
 .blog .posts-list .title a {
-  color: var(--color-default);
+  color: #000;
   transition: 0.3s;
 }
 
 .blog .posts-list .title a:hover {
-  color: var(--color-primary);
+  color: #F5941F;
 }
 
 .blog .posts-list .post-author-img {
