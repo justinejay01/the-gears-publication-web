@@ -25,13 +25,31 @@ router.get("/news/:id?", (req, res) => {
 
   if (id === undefined) res.sendFile(path.join(__dirname + "/views/news.html"));
   else res.sendFile(path.join(__dirname + "/views/news_details.html"));
-  
 });
 
 router.get("/get_news", (req, res) => {
   con.getConnection((err, connection) => {
     if (err) throw err;
-    connection.query("SELECT news_id, news_title FROM news_articles;", (error, results, fields) => {
+    connection.query(
+      "SELECT news_id, news_title FROM news_articles;",
+      (error, results, fields) => {
+        var jsonResults = JSON.stringify(results);
+        res.send(jsonResults);
+        connection.release();
+        if (error) throw error;
+      }
+    );
+  });
+});
+
+router.get("/get_news_article", (req, res) => {
+  console.log(req.query.id)
+  con.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "SELECT news_title, news_desc FROM news_articles WHERE news_id = '" +
+        req.query.id + "'",
+      (error, results, fields) => {
         var jsonResults = JSON.stringify(results);
         res.send(jsonResults);
         connection.release();
