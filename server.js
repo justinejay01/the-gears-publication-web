@@ -3,6 +3,7 @@ const path = require("path");
 const router = express.Router();
 const mysql = require("mysql");
 const parser = require("body-parser");
+const nodemailer = require("nodemailer");
 
 const session = require("express-session");
 const MemoryStore = require("memorystore")(session);
@@ -175,13 +176,75 @@ router.post("/auth/reg", (req, res) => {
   }
 });
 
+router.get("/auth/forgot_pass", (req, res) => {
+  authCheck(req, res, "/views/forgotpass.html", true);
+});
+
+router.post("/auth/send_code", (req, res) => {
+  var umail = req.body.umail;
+
+  if (umail) {
+    con.getConnection((err, connection) => {
+      if (err) throw err;
+      connection.query(
+        "SELECT user_email AS email, user_uname AS uname FROM auth where user_uname = ? OR user_email = ?",
+        [umail, umail],
+        (error, resu, fields) => {
+          if (resu[0] != undefined) {
+            var objUname = resu[0].uname;
+            var objEmail = resu[0].email;
+            var randomCode = Math.floor(100000 + Math.random() * 900000);
+
+            connection.query(
+              "UPDATE auth SET user_verify = ? WHERE user_uname = ?",
+              [randomCode, objUname],
+              (erro, resul, fields) => {
+                sendResetCode(objEmail, randomCode).catch(console.error);
+                console.log(objUname + ": Reset Code Sent");
+                res.send(objEmail);
+                connection.release();
+                if (erro) res.send("0");
+              }
+            );
+            if (error) throw error;
+          } else {
+            res.send("0");
+          }
+        }
+      );
+    });
+  } else {
+    res.send("Please enter username and/or password!");
+    res.end();
+  }
+});
+
 router.get("/auth/logout", (req, res) => {
   var uname = req.session.username;
-  req.session.destroy(function(err) {
+  req.session.destroy(function (err) {
     console.log(uname + ": Logout");
   });
   res.redirect("/");
 });
+
+async function sendResetCode(email, code) {
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: "ngaspi.main@gmail.com", // generated ethereal user
+      pass: "sopwxnamszjdovqp", // generated ethereal password
+    },
+  });
+
+  let info = await transporter.sendMail({
+    from: '"The Gears Publication" <noreply-noreply@noreply.com>', // sender address
+    to: email, // list of receivers
+    subject: "The Gears Publication - User Reset Code", // Subject line
+    text: "Your verification code for reset password is " + code + ".", // plain text body
+  });
+}
 
 function authCheck(req, res, v, isAuth) {
   if (!isAuth) {

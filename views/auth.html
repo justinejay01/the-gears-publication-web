@@ -33,14 +33,15 @@
                 Write without Favor, Express without Fear
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
-                Follow us on Facebook! <a href="https://www.facebook.com/TheGearsOfficial" class="facebook"><i class="bi bi-facebook"></i></a>
+                Follow us on Facebook! <a href="https://www.facebook.com/TheGearsOfficial" class="facebook"><i
+                        class="bi bi-facebook"></i></a>
             </div>
         </div>
     </section>
 
     <header id="header" class="header d-flex align-items-center">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="/" class="logo d-flex align-items-center">
                 <img src="/assets/img/logo.jpg" alt="" />
                 <h3>The Gears Publication<span>.</span></h3>
             </a>
@@ -62,25 +63,24 @@
 
     <div class="breadcrumbs">
         <nav>
-          <div class="container">
-            <ol>
-              <li><a href="/">Home</a></li>
-              <li>User Authentication</li>
-            </ol>
-          </div>
+            <div class="container">
+                <ol>
+                    <li><a href="/">Home</a></li>
+                    <li>User Authentication</li>
+                </ol>
+            </div>
         </nav>
-      </div>
+    </div>
 
     <div class="container">
         <div class="row">
             <div class="col-lg-4"></div>
             <div class="col-lg-4">
-                
-                    <div id="panelLogin" class="">
-                        <div class="card mx-auto my-4">
-                            <div class="card-header">
-                                <h4 class="card-title">Log In</h4>
-                            </div>
+                <div id="panelLogin" class="">
+                    <div class="card mx-auto my-4">
+                        <div class="card-header">
+                            <h4 class="card-title">Log In</h4>
+                        </div>
                         <form id="formLogin" action="javascript:void(0);" method="post">
                             <div class="card-body">
                                 <div class="alert alert-success animate__animated d-none" id="loginSuccess">
@@ -91,8 +91,8 @@
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-text" id="svgUname">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                             <path fill-rule="evenodd"
                                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
@@ -104,8 +104,8 @@
                                 <br />
                                 <div class="input-group">
                                     <div class="input-group-text" id="svgPword">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            class="bi bi-key" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
                                             <path
                                                 d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
                                             <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
@@ -118,19 +118,27 @@
                             <div class="card-footer">
                                 <div class="btn-toolbar justify-content-between">
                                     <div class="button-group" role="button">
-                                        <input type="submit" class="btn btn-orange btn-block" id="btnloginLogin" value="Log In" />
+                                        <input type="submit" class="btn btn-orange btn-block" id="btnloginLogin"
+                                            value="Log In" />
+                                    </div>
+                                    <div class="button-group" role="button">
+                                        <a class="btn btn-secondary btn-block" href="/auth/forgot_pass">Forgot Password</a>
                                     </div>
                                     <div class="button-group">
-                                        <button type="button" class="btn btn-maroon btn-block" id="btnloginReg" value="Register" >Register <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                                          </svg></button>
+                                        <button type="button" class="btn btn-maroon btn-block" id="btnloginReg"
+                                            value="Register">Register <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-arrow-right"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                            </svg></button>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                
+
                 <div id="panelReg" class="d-none">
                     <div class="card mx-auto my-4">
                         <div class="card-header">
@@ -150,8 +158,8 @@
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-text" id="svgFname">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                             <path fill-rule="evenodd"
                                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
@@ -163,8 +171,8 @@
                                 <br />
                                 <div class="input-group">
                                     <div class="input-group-text" id="svgLname">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                             <path fill-rule="evenodd"
                                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
@@ -176,8 +184,8 @@
                                 <br />
                                 <div class="input-group">
                                     <div class="input-group-text" id="svgUname">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                             <path fill-rule="evenodd"
                                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
@@ -189,8 +197,8 @@
                                 <br />
                                 <div class="input-group">
                                     <div class="input-group-text" id="svgEmail">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            class="bi bi-envelope" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                                             <path
                                                 d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
                                         </svg>
@@ -201,8 +209,8 @@
                                 <br />
                                 <div class="input-group">
                                     <div class="input-group-text" id="svgPword">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                            class="bi bi-key" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
                                             <path
                                                 d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z" />
                                             <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />

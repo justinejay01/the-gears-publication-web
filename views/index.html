@@ -2,294 +2,287 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Gears Publication - Home</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Gears Publication - Home</title>
 
-    <link href="/assets/img/favicon.png" rel="icon" />
-    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <link href="/assets/img/favicon.png" rel="icon" />
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/swiper@9.3.2/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/swiper@9.3.2/swiper-bundle.min.css" rel="stylesheet" />
 
-    <link href="/assets/css/main.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/static/css/style.css" />
+  <link href="/assets/css/main.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
 </head>
 
 <body>
-    <section id="topbar" class="topbar d-flex align-items-center">
-        <div class="container d-flex justify-content-center justify-content-md-between">
-            <div class="contact-info d-flex align-items-center">
-                Write without Favor, Express without Fear
-            </div>
-            <div class="social-links d-none d-md-flex align-items-center">
-                Follow us on Facebook! <a href="https://www.facebook.com/TheGearsOfficial" class="facebook"><i class="bi bi-facebook"></i></a>
-            </div>
+  <section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        Write without Favor, Express without Fear
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        Follow us on Facebook!
+        <a href="https://www.facebook.com/TheGearsOfficial" class="facebook"><i class="bi bi-facebook"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="/assets/img/logo.jpg" alt="" />
+        <h3>The Gears Publication<span>.</span></h3>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/forum">Forum</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li id="auth"><a href="/auth">Log In / Register</a></li>
+        </ul>
+      </nav>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    </div>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="container position-relative">
+      <div class="row gy-5" data-aos="fade-in">
+        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+          <h4 class="color-orange text-uppercase">
+            Write without <span>Favor</span>,
+          </h4>
+          <h4 class="color-maroon text-uppercase">
+            Express without <span>Fear</span>.
+          </h4>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="#about" class="btn-get-started">Get Started</a>
+            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+              class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch
+                Video</span></a>
+          </div>
         </div>
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="/assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100" />
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-boxes position-relative">
+      <div class="container position-relative">
+        <div class="row gy-4 mt-5">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-easel"></i></div>
+              <h4 class="title">
+                <a href="#feature-news" class="stretched-link">News</a>
+              </h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-gem"></i></div>
+              <h4 class="title">
+                <a href="" class="stretched-link">Events</a>
+              </h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-geo-alt"></i></div>
+              <h4 class="title">
+                <a href="" class="stretched-link">Forums</a>
+              </h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="featured-news">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Featured News</h2>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-md-3">
+            <div class="card">
+              <img class=""
+                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348630562_2067982660076516_3283421844106803074_n.jpg?_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHxVpk3x_XhX8z2EoLWonKnFQmsoXHcu9YVCayhcdy71s6IJ3HvSqZG_bZl2loja3r1rF96JUo8lcEZuRJXFazG&_nc_ohc=si8Fqpg_oJwAX9sUY7v&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfCeQuMbKlCUevmB_uXRK6WYCGYyz-wtsYF_lpHxxYzjXw&oe=64777948"
+                alt="" srcset="" />
+              <div class="card-body">
+                <a href="" class="badge bg-primary">News</a>
+                <p class="card-text">
+                  𝐋𝐒𝐏𝐔 𝐭𝐫𝐚𝐢𝐧𝐬 𝐭𝐡𝐞𝐦 𝐭𝐨 𝐛𝐞 𝐠𝐥𝐨𝐛𝐚𝐥𝐥𝐲 𝐜𝐨𝐦𝐩𝐞𝐭𝐞𝐧𝐭 𝐠𝐫𝐚𝐝𝐮𝐚𝐭𝐞𝐬 𝐢𝐧
+                  𝐭𝐡𝐞
+                  𝐧𝐞𝐚𝐫 𝐟𝐮𝐭𝐮𝐫𝐞
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img class=""
+                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348636840_976905253493324_3201095573901075268_n.jpg?_nc_cat=104&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH0ChM4bj4P_b9YHro_KbL28lpu5tRu3EDyWm7m1G7cQPkCwZzaHw4Bfm3bu70XG55BubGQCbv3KTrOE159DYSH&_nc_ohc=kZTLBTk-k4MAX-Z8ScF&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAL6rQDlJGPu-3GDe2AVVqR1svbUo2z8kuIY9hHmb_1Wg&oe=6476C2A9"
+                alt="" srcset="" />
+              <div class="card-body">
+                <a href="" class="badge bg-primary">News</a>
+                <p class="card-text">
+                  𝐒𝐁𝐎𝐬 𝐩𝐚𝐫𝐭𝐚𝐤𝐞 𝐢𝐧 𝐒𝐒𝐂'𝐬 𝐟𝐢𝐫𝐬𝐭 𝐓𝐔𝐆𝐀𝐓𝐎𝐆 𝐋𝐞𝐚𝐝𝐞𝐫𝐬𝐡𝐢𝐩 𝐓𝐫𝐚𝐢𝐧𝐢𝐧𝐠
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img class=""
+                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348558805_103811616057623_6925712346098559406_n.jpg?stp=dst-jpg_p526x395&_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=0debeb&_nc_eui2=AeERuGpEyih0xQEJ68Gqta0eAj5AEurNPu0CPkAS6s0-7f4lFCDxzId7VrY77csmgB4cxsVS0h2GyRwZdTXLsbu3&_nc_ohc=lpVT3iOCE_8AX8H1YHr&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAWBk3Z-rnn41Yd0fYH63TC8zd9wdC652XT7RlyaSR0TA&oe=64766E86"
+                alt="" srcset="" />
+              <div class="card-body">
+                <a href="" class="badge bg-primary">News</a>
+                <p class="card-text">
+                  𝐋𝐒𝐏𝐔-𝐒𝐂𝐂 𝐜𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐞𝐬 𝐰𝐢𝐭𝐡 𝐁𝐅𝐏 𝐟𝐨𝐫 𝐅𝐢𝐫𝐞 𝐒𝐚𝐟𝐞𝐭𝐲 𝐃𝐫𝐢𝐥l
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img class=""
+                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/347602521_1276753179915693_4203517880894273103_n.jpg?stp=dst-jpg_p526x296&_nc_cat=107&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFjTudUTUbOKRTB4gVjeKIGAaMwaF_tG6ABozBoX-0boKl0ZirNqxsIn-rYdZDOaVDVi-M0YEBYreDzrIwtDsTi&_nc_ohc=06hOjOwsdYcAX8io-5w&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAm9AjujWyYTKRKglHmWSYItmCB0G6LdcYvrsrLH9wxZQ&oe=6475FA81"
+                alt="" srcset="" />
+              <div class="card-body">
+                <a href="" class="badge bg-primary">News</a>
+                <p class="card-text">
+                  𝐋𝐒𝐏𝐔-𝐒𝐂𝐂 𝐩𝐫𝐨𝐝𝐮𝐜𝐞𝐬 𝟏𝟕𝟗 𝐧𝐞𝐰 𝐋𝐏𝐓; 𝐠𝐚𝐫𝐧𝐞𝐫𝐬 𝟔𝟓.𝟕𝟗%, 𝟒𝟎.𝟕𝟓%
+                  𝐩𝐚𝐬𝐬𝐢𝐧𝐠 𝐫𝐚𝐭𝐞𝐬
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+          <a href="" class="btn btn-orange justify-content-center">More News</a>
+        </div>
+      </div>
     </section>
 
-    <header id="header" class="header d-flex align-items-center">
-        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-            <a href="/" class="logo d-flex align-items-center">
-                <img src="/assets/img/logo.jpg" alt="" />
-                <h3>The Gears Publication<span>.</span></h3>
-            </a>
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="/news">News</a></li>
-                    <li><a href="/events">Events</a></li>
-                    <li><a href="/forum">Forum</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li id="auth"><a href="/auth">Log In / Register</a></li>
-                </ul>
-            </nav>
-
-            <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-            <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    <section id="featured-events">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Featured Events</h2>
         </div>
-    </header>
 
-    <section id="hero" class="hero">
-        <div class="container position-relative">
-            <div class="row gy-5" data-aos="fade-in">
-                <div
-                    class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-                    <h4 class="color-orange text-uppercase">
-                        Write without <span>Favor</span>,
-                    </h4>
-                    <h4 class="color-maroon text-uppercase">
-                        Express without <span>Fear</span>.
-                    </h4>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <a href="#about" class="btn-get-started">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-                            class="glightbox btn-watch-video d-flex align-items-center"><i
-                                class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="/assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out"
-                        data-aos-delay="100" />
-                </div>
+        <div class="row gy-4">
+          <div class="col-md-3">
+            <div class="card">
+              <img class=""
+                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348630562_2067982660076516_3283421844106803074_n.jpg?_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHxVpk3x_XhX8z2EoLWonKnFQmsoXHcu9YVCayhcdy71s6IJ3HvSqZG_bZl2loja3r1rF96JUo8lcEZuRJXFazG&_nc_ohc=si8Fqpg_oJwAX9sUY7v&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfCeQuMbKlCUevmB_uXRK6WYCGYyz-wtsYF_lpHxxYzjXw&oe=64777948"
+                alt="" srcset="" />
+              <div class="card-body">
+                <a href="" class="badge bg-primary">News</a>
+                <p class="card-text">
+                  𝐋𝐒𝐏𝐔 𝐭𝐫𝐚𝐢𝐧𝐬 𝐭𝐡𝐞𝐦 𝐭𝐨 𝐛𝐞 𝐠𝐥𝐨𝐛𝐚𝐥𝐥𝐲 𝐜𝐨𝐦𝐩𝐞𝐭𝐞𝐧𝐭 𝐠𝐫𝐚𝐝𝐮𝐚𝐭𝐞𝐬 𝐢𝐧
+                  𝐭𝐡𝐞
+                  𝐧𝐞𝐚𝐫 𝐟𝐮𝐭𝐮𝐫𝐞
+                </p>
+              </div>
             </div>
-        </div>
-
-        <div class="icon-boxes position-relative">
-            <div class="container position-relative">
-                <div class="row gy-4 mt-5">
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bi bi-easel"></i></div>
-                            <h4 class="title">
-                                <a href="#feature-news" class="stretched-link">News</a>
-                            </h4>
-                        </div>
-                    </div>
-                    <!--End Icon Box -->
-
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bi bi-gem"></i></div>
-                            <h4 class="title">
-                                <a href="" class="stretched-link">Events</a>
-                            </h4>
-                        </div>
-                    </div>
-                    <!--End Icon Box -->
-
-                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bi bi-geo-alt"></i></div>
-                            <h4 class="title">
-                                <a href="" class="stretched-link">Forums</a>
-                            </h4>
-                        </div>
-                    </div>
-                    <!--End Icon Box -->
-                </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img class=""
+                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348636840_976905253493324_3201095573901075268_n.jpg?_nc_cat=104&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH0ChM4bj4P_b9YHro_KbL28lpu5tRu3EDyWm7m1G7cQPkCwZzaHw4Bfm3bu70XG55BubGQCbv3KTrOE159DYSH&_nc_ohc=kZTLBTk-k4MAX-Z8ScF&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAL6rQDlJGPu-3GDe2AVVqR1svbUo2z8kuIY9hHmb_1Wg&oe=6476C2A9"
+                alt="" srcset="" />
+              <div class="card-body">
+                <a href="" class="badge bg-primary">News</a>
+                <p class="card-text">
+                  𝐒𝐁𝐎𝐬 𝐩𝐚𝐫𝐭𝐚𝐤𝐞 𝐢𝐧 𝐒𝐒𝐂'𝐬 𝐟𝐢𝐫𝐬𝐭 𝐓𝐔𝐆𝐀𝐓𝐎𝐆 𝐋𝐞𝐚𝐝𝐞𝐫𝐬𝐡𝐢𝐩 𝐓𝐫𝐚𝐢𝐧𝐢𝐧𝐠
+                </p>
+              </div>
             </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img class=""
+                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348558805_103811616057623_6925712346098559406_n.jpg?stp=dst-jpg_p526x395&_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=0debeb&_nc_eui2=AeERuGpEyih0xQEJ68Gqta0eAj5AEurNPu0CPkAS6s0-7f4lFCDxzId7VrY77csmgB4cxsVS0h2GyRwZdTXLsbu3&_nc_ohc=lpVT3iOCE_8AX8H1YHr&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAWBk3Z-rnn41Yd0fYH63TC8zd9wdC652XT7RlyaSR0TA&oe=64766E86"
+                alt="" srcset="" />
+              <div class="card-body">
+                <a href="" class="badge bg-primary">News</a>
+                <p class="card-text">
+                  𝐋𝐒𝐏𝐔-𝐒𝐂𝐂 𝐜𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐞𝐬 𝐰𝐢𝐭𝐡 𝐁𝐅𝐏 𝐟𝐨𝐫 𝐅𝐢𝐫𝐞 𝐒𝐚𝐟𝐞𝐭𝐲 𝐃𝐫𝐢𝐥l
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img class=""
+                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/347602521_1276753179915693_4203517880894273103_n.jpg?stp=dst-jpg_p526x296&_nc_cat=107&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFjTudUTUbOKRTB4gVjeKIGAaMwaF_tG6ABozBoX-0boKl0ZirNqxsIn-rYdZDOaVDVi-M0YEBYreDzrIwtDsTi&_nc_ohc=06hOjOwsdYcAX8io-5w&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAm9AjujWyYTKRKglHmWSYItmCB0G6LdcYvrsrLH9wxZQ&oe=6475FA81"
+                alt="" srcset="" />
+              <div class="card-body">
+                <a href="" class="badge bg-primary">News</a>
+                <p class="card-text">
+                  𝐋𝐒𝐏𝐔-𝐒𝐂𝐂 𝐩𝐫𝐨𝐝𝐮𝐜𝐞𝐬 𝟏𝟕𝟗 𝐧𝐞𝐰 𝐋𝐏𝐓; 𝐠𝐚𝐫𝐧𝐞𝐫𝐬 𝟔𝟓.𝟕𝟗%, 𝟒𝟎.𝟕𝟓%
+                  𝐩𝐚𝐬𝐬𝐢𝐧𝐠 𝐫𝐚𝐭𝐞𝐬
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="row justify-content-center mt-3">
+          <a href="" class="btn btn-orange justify-content-center">More Events</a>
+        </div>
+      </div>
     </section>
+  </main>
+  <!-- End Hero Section -->
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
 
-    <main id="main">
-        <section id="featured-news">
-            <div class="container" data-aos="fade-up">
-                <div class="section-header">
-                    <h2>Featured News</h2>
-                </div>
+  <!-- Template Main JS File -->
+  <script src="/assets/js/main.js"></script>
 
-                <div class="row gy-4">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img class=""
-                                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348630562_2067982660076516_3283421844106803074_n.jpg?_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHxVpk3x_XhX8z2EoLWonKnFQmsoXHcu9YVCayhcdy71s6IJ3HvSqZG_bZl2loja3r1rF96JUo8lcEZuRJXFazG&_nc_ohc=si8Fqpg_oJwAX9sUY7v&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfCeQuMbKlCUevmB_uXRK6WYCGYyz-wtsYF_lpHxxYzjXw&oe=64777948"
-                                alt="" srcset="" />
-                            <div class="card-body">
-                                <a href="" class="badge bg-primary">News</a>
-                                <p class="card-text">
-                                    𝐋𝐒𝐏𝐔 𝐭𝐫𝐚𝐢𝐧𝐬 𝐭𝐡𝐞𝐦 𝐭𝐨 𝐛𝐞 𝐠𝐥𝐨𝐛𝐚𝐥𝐥𝐲 𝐜𝐨𝐦𝐩𝐞𝐭𝐞𝐧𝐭
-                                    𝐠𝐫𝐚𝐝𝐮𝐚𝐭𝐞𝐬 𝐢𝐧 𝐭𝐡𝐞
-                                    𝐧𝐞𝐚𝐫 𝐟𝐮𝐭𝐮𝐫𝐞
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img class=""
-                                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348636840_976905253493324_3201095573901075268_n.jpg?_nc_cat=104&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH0ChM4bj4P_b9YHro_KbL28lpu5tRu3EDyWm7m1G7cQPkCwZzaHw4Bfm3bu70XG55BubGQCbv3KTrOE159DYSH&_nc_ohc=kZTLBTk-k4MAX-Z8ScF&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAL6rQDlJGPu-3GDe2AVVqR1svbUo2z8kuIY9hHmb_1Wg&oe=6476C2A9"
-                                alt="" srcset="" />
-                            <div class="card-body">
-                                <a href="" class="badge bg-primary">News</a>
-                                <p class="card-text">
-                                    𝐒𝐁𝐎𝐬 𝐩𝐚𝐫𝐭𝐚𝐤𝐞 𝐢𝐧 𝐒𝐒𝐂'𝐬 𝐟𝐢𝐫𝐬𝐭 𝐓𝐔𝐆𝐀𝐓𝐎𝐆
-                                    𝐋𝐞𝐚𝐝𝐞𝐫𝐬𝐡𝐢𝐩 𝐓𝐫𝐚𝐢𝐧𝐢𝐧𝐠
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img class=""
-                                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348558805_103811616057623_6925712346098559406_n.jpg?stp=dst-jpg_p526x395&_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=0debeb&_nc_eui2=AeERuGpEyih0xQEJ68Gqta0eAj5AEurNPu0CPkAS6s0-7f4lFCDxzId7VrY77csmgB4cxsVS0h2GyRwZdTXLsbu3&_nc_ohc=lpVT3iOCE_8AX8H1YHr&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAWBk3Z-rnn41Yd0fYH63TC8zd9wdC652XT7RlyaSR0TA&oe=64766E86"
-                                alt="" srcset="" />
-                            <div class="card-body">
-                                <a href="" class="badge bg-primary">News</a>
-                                <p class="card-text">
-                                    𝐋𝐒𝐏𝐔-𝐒𝐂𝐂 𝐜𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐞𝐬 𝐰𝐢𝐭𝐡 𝐁𝐅𝐏 𝐟𝐨𝐫 𝐅𝐢𝐫𝐞
-                                    𝐒𝐚𝐟𝐞𝐭𝐲 𝐃𝐫𝐢𝐥l
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img class=""
-                                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/347602521_1276753179915693_4203517880894273103_n.jpg?stp=dst-jpg_p526x296&_nc_cat=107&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFjTudUTUbOKRTB4gVjeKIGAaMwaF_tG6ABozBoX-0boKl0ZirNqxsIn-rYdZDOaVDVi-M0YEBYreDzrIwtDsTi&_nc_ohc=06hOjOwsdYcAX8io-5w&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAm9AjujWyYTKRKglHmWSYItmCB0G6LdcYvrsrLH9wxZQ&oe=6475FA81"
-                                alt="" srcset="" />
-                            <div class="card-body">
-                                <a href="" class="badge bg-primary">News</a>
-                                <p class="card-text">
-                                    𝐋𝐒𝐏𝐔-𝐒𝐂𝐂 𝐩𝐫𝐨𝐝𝐮𝐜𝐞𝐬 𝟏𝟕𝟗 𝐧𝐞𝐰 𝐋𝐏𝐓; 𝐠𝐚𝐫𝐧𝐞𝐫𝐬 𝟔𝟓.𝟕𝟗%,
-                                    𝟒𝟎.𝟕𝟓%
-                                    𝐩𝐚𝐬𝐬𝐢𝐧𝐠 𝐫𝐚𝐭𝐞𝐬
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center mt-3">
-                    <a href="" class="btn btn-orange justify-content-center">More News</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="featured-events">
-            <div class="container" data-aos="fade-up">
-                <div class="section-header">
-                    <h2>Featured Events</h2>
-                </div>
-
-                <div class="row gy-4">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img class=""
-                                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348630562_2067982660076516_3283421844106803074_n.jpg?_nc_cat=111&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHxVpk3x_XhX8z2EoLWonKnFQmsoXHcu9YVCayhcdy71s6IJ3HvSqZG_bZl2loja3r1rF96JUo8lcEZuRJXFazG&_nc_ohc=si8Fqpg_oJwAX9sUY7v&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfCeQuMbKlCUevmB_uXRK6WYCGYyz-wtsYF_lpHxxYzjXw&oe=64777948"
-                                alt="" srcset="" />
-                            <div class="card-body">
-                                <a href="" class="badge bg-primary">News</a>
-                                <p class="card-text">
-                                    𝐋𝐒𝐏𝐔 𝐭𝐫𝐚𝐢𝐧𝐬 𝐭𝐡𝐞𝐦 𝐭𝐨 𝐛𝐞 𝐠𝐥𝐨𝐛𝐚𝐥𝐥𝐲 𝐜𝐨𝐦𝐩𝐞𝐭𝐞𝐧𝐭
-                                    𝐠𝐫𝐚𝐝𝐮𝐚𝐭𝐞𝐬 𝐢𝐧 𝐭𝐡𝐞
-                                    𝐧𝐞𝐚𝐫 𝐟𝐮𝐭𝐮𝐫𝐞
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img class=""
-                                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348636840_976905253493324_3201095573901075268_n.jpg?_nc_cat=104&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH0ChM4bj4P_b9YHro_KbL28lpu5tRu3EDyWm7m1G7cQPkCwZzaHw4Bfm3bu70XG55BubGQCbv3KTrOE159DYSH&_nc_ohc=kZTLBTk-k4MAX-Z8ScF&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAL6rQDlJGPu-3GDe2AVVqR1svbUo2z8kuIY9hHmb_1Wg&oe=6476C2A9"
-                                alt="" srcset="" />
-                            <div class="card-body">
-                                <a href="" class="badge bg-primary">News</a>
-                                <p class="card-text">
-                                    𝐒𝐁𝐎𝐬 𝐩𝐚𝐫𝐭𝐚𝐤𝐞 𝐢𝐧 𝐒𝐒𝐂'𝐬 𝐟𝐢𝐫𝐬𝐭 𝐓𝐔𝐆𝐀𝐓𝐎𝐆
-                                    𝐋𝐞𝐚𝐝𝐞𝐫𝐬𝐡𝐢𝐩 𝐓𝐫𝐚𝐢𝐧𝐢𝐧𝐠
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img class=""
-                                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/348558805_103811616057623_6925712346098559406_n.jpg?stp=dst-jpg_p526x395&_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=0debeb&_nc_eui2=AeERuGpEyih0xQEJ68Gqta0eAj5AEurNPu0CPkAS6s0-7f4lFCDxzId7VrY77csmgB4cxsVS0h2GyRwZdTXLsbu3&_nc_ohc=lpVT3iOCE_8AX8H1YHr&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAWBk3Z-rnn41Yd0fYH63TC8zd9wdC652XT7RlyaSR0TA&oe=64766E86"
-                                alt="" srcset="" />
-                            <div class="card-body">
-                                <a href="" class="badge bg-primary">News</a>
-                                <p class="card-text">
-                                    𝐋𝐒𝐏𝐔-𝐒𝐂𝐂 𝐜𝐨𝐥𝐥𝐚𝐛𝐨𝐫𝐚𝐭𝐞𝐬 𝐰𝐢𝐭𝐡 𝐁𝐅𝐏 𝐟𝐨𝐫 𝐅𝐢𝐫𝐞
-                                    𝐒𝐚𝐟𝐞𝐭𝐲 𝐃𝐫𝐢𝐥l
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <img class=""
-                                src="https://scontent.fmnl28-1.fna.fbcdn.net/v/t39.30808-6/347602521_1276753179915693_4203517880894273103_n.jpg?stp=dst-jpg_p526x296&_nc_cat=107&cb=99be929b-59f725be&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFjTudUTUbOKRTB4gVjeKIGAaMwaF_tG6ABozBoX-0boKl0ZirNqxsIn-rYdZDOaVDVi-M0YEBYreDzrIwtDsTi&_nc_ohc=06hOjOwsdYcAX8io-5w&_nc_ht=scontent.fmnl28-1.fna&oh=00_AfAm9AjujWyYTKRKglHmWSYItmCB0G6LdcYvrsrLH9wxZQ&oe=6475FA81"
-                                alt="" srcset="" />
-                            <div class="card-body">
-                                <a href="" class="badge bg-primary">News</a>
-                                <p class="card-text">
-                                    𝐋𝐒𝐏𝐔-𝐒𝐂𝐂 𝐩𝐫𝐨𝐝𝐮𝐜𝐞𝐬 𝟏𝟕𝟗 𝐧𝐞𝐰 𝐋𝐏𝐓; 𝐠𝐚𝐫𝐧𝐞𝐫𝐬 𝟔𝟓.𝟕𝟗%,
-                                    𝟒𝟎.𝟕𝟓%
-                                    𝐩𝐚𝐬𝐬𝐢𝐧𝐠 𝐫𝐚𝐭𝐞𝐬
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center mt-3">
-                    <a href="" class="btn btn-orange justify-content-center">More Events</a>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- End Hero Section -->
-    <!-- Vendor JS Files -->
-    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/vendor/aos/aos.js"></script>
-    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="/assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="/assets/js/main.js"></script>
-
-    <script>
-        fetch("/auth/check")
-            .then((res) => res.text())
-            .then((text) => {
-                if (text != "0") document.getElementById("auth").innerHTML = text;
-            });
-    </script>
+  <script>
+    fetch("/auth/check")
+      .then((res) => res.text())
+      .then((text) => {
+        if (text != "0") document.getElementById("auth").innerHTML = text;
+      });
+  </script>
 </body>
 
 </html>
