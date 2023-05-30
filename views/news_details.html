@@ -125,7 +125,7 @@
             <article class="blog-details">
 
               <div class="post-img">
-                <img src="/assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                <img id="c_news_img" src="/assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
               </div>
 
               <h2 class="title" id="c_news_title"></h2>
@@ -137,23 +137,9 @@
                 </ul>
               </div><!-- End meta top -->
 
-              <div class="content" id="c_news_desc">
+              <div class="content" id="c_news_desc"></div>
 
-              </div><!-- End post content -->
-
-              <div class="meta-bottom">
-                <i class="bi bi-cats"></i>
-                <ul class="cats">
-                  <li><a href="#">News</a></li>
-                </ul>
-
-                <i class="bi bi-tags"></i>
-                <ul class="tags">
-                  <li><a href="#">Tags</a></li>
-                </ul>
-              </div><!-- End meta bottom -->
-
-            </article><!-- End blog post -->
+            </article>
 
             <div class="comments">
 
@@ -324,6 +310,7 @@
       const news = JSON.parse(jsonNews);
       document.getElementById("b_news_title").innerHTML = news[0].news_title;
       document.getElementById("c_news_title").innerHTML = news[0].news_title;
+      document.getElementById("c_news_img").src = "/assets/img/news/" + document.URL.split('/')[4] + ".jpg";
       document.getElementById("c_news_author").innerHTML = news[0].news_author;
       document.getElementById("c_news_desc").innerHTML = news[0].news_desc;
     });</script>
