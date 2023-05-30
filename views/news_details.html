@@ -128,13 +128,12 @@
                 <img src="/assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
               </div>
 
-              <h2 class="title" id="c_news_title">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</h2>
+              <h2 class="title" id="c_news_title"></h2>
 
               <div class="meta-top">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">John Doe</a></li>
+                  <li class="d-flex align-items-center" id="c_news_author"><i class="bi bi-person"></i> <a href="blog-details.html"></a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
                 </ul>
               </div><!-- End meta top -->
 
@@ -318,13 +317,14 @@
   <script src="/assets/js/main.js"></script>
 
   <script>
-  fetch("/get_news_article?", new URLSearchParams({ id: "1"}))
+  fetch("/get_news_article?id=" + document.URL.split('/')[4])
     .then((res) => res.json())
     .then((json) => {
       const jsonNews = JSON.stringify(json);
       const news = JSON.parse(jsonNews);
       document.getElementById("b_news_title").innerHTML = news[0].news_title;
       document.getElementById("c_news_title").innerHTML = news[0].news_title;
+      document.getElementById("c_news_author").innerHTML = news[0].news_author;
       document.getElementById("c_news_desc").innerHTML = news[0].news_desc;
     });</script>
 

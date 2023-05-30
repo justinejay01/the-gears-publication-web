@@ -43,15 +43,15 @@ router.get("/get_news", (req, res) => {
 });
 
 router.get("/get_news_article", (req, res) => {
-  console.log(req.query.id)
   con.getConnection((err, connection) => {
     if (err) throw err;
     connection.query(
-      "SELECT news_title, news_desc FROM news_articles WHERE news_id = '" +
+      "SELECT news_title, news_author, news_desc, TO_CHAR(news_date_post, 'MMMM dd, yyyy') FROM news_articles WHERE news_id = '" +
         req.query.id + "'",
       (error, results, fields) => {
         var jsonResults = JSON.stringify(results);
         res.send(jsonResults);
+        console.log(jsonResults);
         connection.release();
         if (error) throw error;
       }
