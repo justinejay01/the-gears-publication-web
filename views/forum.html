@@ -81,7 +81,23 @@
           <h2>Forums</h2>
         </div>
 
-        <div class="gy-4 posts-list" id="forum_list"></div>
+        <div class="gy-4 posts-list mb-5" id="forum_list"></div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Create New Topic</h5>
+            <form>
+              <div class="mb-3">
+                <label for="topicTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="topicTitle">
+              </div>
+              <div class="mb-3">
+                <label for="topicContent" class="form-label">Content</label>
+                <textarea class="form-control" id="topicContent" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+          </div>
 
       </div>
     </section>
@@ -160,7 +176,7 @@
         for (var i = 0; i < forum.length; ++i) {
           article +=
             '<article> <h2 class="title"> <a href="/forum/' + forum[i].forum_id + '" >' +
-              forum[i].forum_title +
+            forum[i].forum_title +
             "</a> </h2> <p>" + forum[i].forum_cont + "</p> </article>";
         }
         document.getElementById("forum_list").innerHTML = article;
