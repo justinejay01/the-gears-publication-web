@@ -62,6 +62,21 @@ router.get("/get_news", (req, res) => {
   });
 });
 
+router.get("/get_forums", (req, res) => {
+  con.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "SELECT forum_id, forum_title, forum_cont FROM forum;",
+      (error, results, fields) => {
+        var jsonResults = JSON.stringify(results);
+        res.send(jsonResults);
+        connection.release();
+        if (error) throw error;
+      }
+    );
+  });
+});
+
 router.get("/get_news_article", (req, res) => {
   con.getConnection((err, connection) => {
     if (err) throw err;
@@ -214,7 +229,67 @@ router.post("/auth/send_code", (req, res) => {
       );
     });
   } else {
-    res.send("Please enter username and/or password!");
+    res.send("Please enter your email address!");
+    res.end();
+  }
+});
+
+router.post("/auth/verify_code_pass", (req, res) => {
+  var email = req.body.email;
+  var rcode = req.body.rcode;
+
+  if (rcode) {
+    con.getConnection((err, connection) => {
+      if (err) throw err;
+      connection.query(
+        "SELECT user_email AS email, user_uname AS uname FROM auth where user_email = ? AND user_verify = ?",
+        [email, rcode],
+        (error, resu, fields) => {
+          console.log(resu[0].uname);
+          if (resu[0] != undefined) {
+            var objUname = resu[0].uname;
+            var objEmail = resu[0].email;
+
+            console.log(objUname + ": Verification Success");
+            res.send(objEmail);
+            connection.release();
+            if (error) throw error;
+          } else {
+            res.send("2");
+          }
+        }
+      );
+    });
+  } else {
+    res.send("Please enter your verification code!");
+    res.end();
+  }
+});
+
+router.post("/auth/reset_pass", (req, res) => {
+  var email = req.body.email;
+  var rcode = req.body.rcode;
+  var pass = req.body.pass;
+
+  if (email && pass) {
+    var sha256Hash = crypto.createHash("sha256");
+    var pwordData = sha256Hash.update(pass, "utf-8");
+    var pwordHash = pwordData.digest("hex");
+
+    con.getConnection((err, connection) => {
+      if (err) throw err;
+      connection.query(
+        "UPDATE auth SET user_pass = ? WHERE user_email = ? AND user_verify = ?",
+        [pwordHash, email, rcode],
+        (error, resu, fields) => {
+          res.send(email);
+          connection.release();
+          if (error) throw error;
+        }
+      );
+    });
+  } else {
+    res.send("Please enter your verification code!");
     res.end();
   }
 });

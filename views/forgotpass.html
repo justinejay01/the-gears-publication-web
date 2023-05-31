@@ -87,6 +87,9 @@
                                 <div class="alert alert-success animate__animated d-none" id="forgSuccess">
                                     Resetting password successfully... Click <a href="/auth">here</a> to log in!
                                 </div>
+                                <div class="alert alert-success animate__animated d-none" id="forgVerified">
+                                    Reset code verification successfully!
+                                </div>
                                 <div class="alert alert-success animate__animated d-none" id="forgSent">
                                     Reset code has been sent to your email address! <strong id="forgEmail"></strong>
                                 </div>
@@ -123,6 +126,8 @@
                                     </div>
                                     <input class="form-control" type="number" id="forgRCode" name="forgRCode"
                                         placeholder="Enter reset code..." disabled />
+                                    <button class="btn btn-orange" id="forgRCodeSend" name="forgRCodeSend"
+                                        onclick="forgRCodeSend0();">Verify</button>
                                 </div>
                                 <br />
                                 <div class="input-group">
@@ -141,8 +146,8 @@
                             <div class="card-footer">
                                 <div class="btn-toolbar justify-content-between">
                                     <div class="button-group" role="button">
-                                        <a class="btn btn-secondary btn-block" href="/auth/forgot_pass">Forgot
-                                            Password</a>
+                                        <button class="btn btn-secondary" id="forgPass" name="forgPass"
+                                        onclick="forgPass0();" disabled>Reset Password</button>
                                     </div>
                                 </div>
                             </div>
@@ -165,61 +170,7 @@
 
     <script src="/assets/js/main.js"></script>
 
-    <script>
-        function forgUmailSend0() {
-            var umail = document.getElementById("forgUmail").value;
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    if (this.responseText == "0") {
-                        var forgFailed = document.getElementById("forgFailed");
-                        forgFailed.classList.remove("d-none");
-
-                        if (forgFailed.classList.contains("animate__fadeOut")) {
-                            forgFailed.classList.toggle("animate__fadeOut");
-                        }
-
-                        forgFailed.classList.toggle("animate__fadeIn");
-
-                        setTimeout(function () {
-                            forgFailed.classList.toggle("animate__fadeIn");
-                            forgFailed.classList.toggle("animate__fadeOut");
-                        }, 5000);
-                        setTimeout(function () {
-                            forgFailed.classList.add("d-none");
-                        }, 5500);
-                    } else {
-                        document.getElementById("forgEmail").innerHTML = this.responseText;
-
-                        var forgSuccess = document.getElementById("forgSent");
-                        forgSuccess.classList.remove("d-none");
-
-                        document.getElementById("forgRCode").setAttribute("disabled", "");
-
-                        if (forgSuccess.classList.contains("animate__fadeOut")) {
-                            forgSuccess.classList.toggle("animate__fadeOut");
-                        }
-
-                        forgSuccess.classList.toggle("animate__fadeIn");
-
-                        setTimeout(function () {
-                            forgSuccess.classList.toggle("animate__fadeIn");
-                            forgSuccess.classList.toggle("animate__fadeOut");
-                        }, 5000);
-                        setTimeout(function () {
-                            forgSuccess.classList.add("d-none");
-                        }, 5500);
-                    }
-                }
-            };
-            xhr.open("POST", "/auth/send_code", true);
-            xhr.setRequestHeader(
-                "Content-Type",
-                "application/x-www-form-urlencoded; charset=UTF-8"
-            );
-            xhr.send("umail=" + umail);
-        }
-    </script>
+    <script src="/assets/js/forgotpass.js"></script>
 </body>
 
 </html>

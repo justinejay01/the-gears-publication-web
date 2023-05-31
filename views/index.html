@@ -53,7 +53,23 @@
           <li><a href="/forum">Forum</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
-          <li id="auth"><a href="/auth">Log In / Register</a></li>
+          <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
 
@@ -72,12 +88,7 @@
           <h4 class="color-maroon text-uppercase">
             Express without <span>Fear</span>.
           </h4>
-          <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started">Get Started</a>
-            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
-              class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch
-                Video</span></a>
-          </div>
+          
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
           <img src="/assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100" />
@@ -280,7 +291,11 @@
     fetch("/auth/check")
       .then((res) => res.text())
       .then((text) => {
-        if (text != "0") document.getElementById("auth").innerHTML = text;
+        if (text != "0") {
+          document.getElementById("auth").innerHTML = "";
+        } else {
+
+        }
       });
   </script>
 </body>

@@ -81,15 +81,8 @@
           <h2>Forums</h2>
         </div>
 
-        <div class="row gy-4 posts-list" id="forum_list"></div>
+        <div class="gy-4 posts-list" id="forum_list"></div>
 
-        <div class="blog-pagination">
-          <ul class="justify-content-center">
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-          </ul>
-        </div>
       </div>
     </section>
 
@@ -158,17 +151,21 @@
   <script src="/assets/js/main.js"></script>
 
   <script>
-    fetch("/get_news_article?id=" + document.URL.split('/')[4])
+    fetch("/get_forums")
       .then((res) => res.json())
       .then((json) => {
         const jsonNews = JSON.stringify(json);
-        const news = JSON.parse(jsonNews);
-        document.getElementById("b_news_title").innerHTML = news[0].news_title;
-        document.getElementById("c_news_title").innerHTML = news[0].news_title;
-        document.getElementById("c_news_img").src = "/assets/img/news/" + document.URL.split('/')[4] + ".jpg";
-        document.getElementById("c_news_author").innerHTML = news[0].news_author;
-        document.getElementById("c_news_desc").innerHTML = news[0].news_desc;
-      });</script>
+        const forum = JSON.parse(jsonNews);
+        let article = '';
+        for (var i = 0; i < forum.length; ++i) {
+          article +=
+            '<article> <h2 class="title"> <a href="/forum/' + forum[i].forum_id + '" >' +
+              forum[i].forum_title +
+            "</a> </h2> <p>" + forum[i].forum_cont + "</p> </article>";
+        }
+        document.getElementById("forum_list").innerHTML = article;
+      });
+  </script>
 
 </body>
 
