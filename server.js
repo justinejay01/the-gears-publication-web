@@ -94,8 +94,35 @@ router.get("/get_news_article", (req, res) => {
   });
 });
 
-router.get("/forum", (req, res) => {
+router.get("/get_forum_content", (req, res)=> {
+  var id = req.query.id;
+  con.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "SELECT forum_title, forum_author, forum_cont FROM forum WHERE forum_id = '" +
+        id +
+        "'",
+      (error, results, fields) => {
+        var jsonResults = JSON.stringify(results);
+        res.send(jsonResults);
+        connection.release();
+        if (error) throw error;
+      }
+    );
+  });
+});
+
+router.get("/forums", (req, res) => {
   authCheck(req, res, "/views/forum.html", false);
+});
+
+router.get("/forum/:id?", (req, res) => {
+  const id = req.params.id;
+
+  if (id === undefined) res.redirect("/forums");
+  else {
+    authCheck(req, res, "/views/forum_content.html", false);
+  }
 });
 
 router.get("/auth", (req, res) => {
