@@ -5,8 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Gears Publication - Forums</title>
-
+  <title>The Gears Publication - News</title>
   <link href="/assets/img/favicon.png" rel="icon" />
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
@@ -68,8 +67,8 @@
         <div class="container">
           <ol>
             <li><a href="/">Home</a></li>
-            <li><a href="/news"></a>Forums</li>
-            <li id="b_news_title"></li>
+            <li><a href="/news">News</a></li>
+            <li id="b_forum_title"></li>
           </ol>
         </div>
       </nav>
@@ -77,32 +76,37 @@
 
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Forums</h2>
-        </div>
 
-        <div class="gy-4 posts-list mb-5" id="forum_list"></div>
+        <div class="row g-5">
 
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Create New Topic</h5>
-            <form id="formCreateForum" action="javascript:void(0);" method="post">
-              <div class="mb-3">
-                <label for="topicTitle" class="form-label">Title</label>
-                <input type="text" class="form-control" id="topicTitle">
-              </div>
-              <div class="mb-3">
-                <label for="topicContent" class="form-label">Content</label>
-                <textarea class="form-control" id="topicContent" rows="3"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Create</button>
-            </form>
+          <div class="col-lg-12">
+
+            <article class="blog-details">
+
+              <h2 class="title" id="c_forum_title"></h2>
+
+              <div class="meta-top">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i><div id="c_forum_author"></div></li>
+                  <li class="d-flex align-items-center d-none"><i class="bi bi-clock"></i> <a href="blog-details.html"><time
+                        datetime="2020-01-01">Jan 1, 2022</time></a></li>
+                </ul>
+              </div><!-- End meta top -->
+
+              <div class="content" id="c_forum_cont"></div>
+
+            </article>
+
           </div>
 
-      </div>
-    </section>
 
-  </main>
+        </div>
+      </div>
+
+      </div>
+    </section><!-- End Blog Details Section -->
+
+  </main><!-- End #main -->
 
   <footer id="footer" class="footer">
 
@@ -167,21 +171,16 @@
   <script src="/assets/js/main.js"></script>
 
   <script>
-    fetch("/get_forums")
+    fetch("/get_forum_content?id=" + document.URL.split('/')[4])
       .then((res) => res.json())
       .then((json) => {
         const jsonNews = JSON.stringify(json);
-        const forum = JSON.parse(jsonNews);
-        let article = '';
-        for (var i = 0; i < forum.length; ++i) {
-          article +=
-            '<article> <h2 class="title"> <a href="/forum/' + forum[i].forum_id + '" >' +
-            forum[i].forum_title +
-            "</a> </h2> <p>" + forum[i].forum_cont + "</p> </article>";
-        }
-        document.getElementById("forum_list").innerHTML = article;
-      });
-  </script>
+        const news = JSON.parse(jsonNews);
+        document.getElementById("b_forum_title").innerHTML = news[0].news_title;
+        document.getElementById("c_forum_title").innerHTML = news[0].news_title;
+        document.getElementById("c_forum_author").innerHTML = news[0].news_author;
+        document.getElementById("c_forum_cont").innerHTML = news[0].news_desc;
+      });</script>
 
 </body>
 
