@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Gears Publication - News</title>
+  <title>The Gears Publication - Forum Content</title>
   <link href="/assets/img/favicon.png" rel="icon" />
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
@@ -67,7 +67,7 @@
         <div class="container">
           <ol>
             <li><a href="/">Home</a></li>
-            <li><a href="/news">News</a></li>
+            <li><a href="/forums">Forums</a></li>
             <li id="b_forum_title"></li>
           </ol>
         </div>
@@ -174,12 +174,12 @@
     fetch("/get_forum_content?id=" + document.URL.split('/')[4])
       .then((res) => res.json())
       .then((json) => {
-        const jsonNews = JSON.stringify(json);
-        const news = JSON.parse(jsonNews);
-        document.getElementById("b_forum_title").innerHTML = news[0].news_title;
-        document.getElementById("c_forum_title").innerHTML = news[0].news_title;
-        document.getElementById("c_forum_author").innerHTML = news[0].news_author;
-        document.getElementById("c_forum_cont").innerHTML = news[0].news_desc;
+        const jsonForum = JSON.stringify(json);
+        const forum = JSON.parse(jsonForum);
+        document.getElementById("b_forum_title").innerHTML = forum[0].forum_title;
+        document.getElementById("c_forum_title").innerHTML = forum[0].forum_title;
+        document.getElementById("c_forum_author").innerHTML = forum[0].forum_author;
+        document.getElementById("c_forum_cont").innerHTML = forum[0].forum_cont;
       });</script>
 
 </body>

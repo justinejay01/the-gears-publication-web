@@ -68,8 +68,7 @@
         <div class="container">
           <ol>
             <li><a href="/">Home</a></li>
-            <li><a href="/news"></a>Forums</li>
-            <li id="b_news_title"></li>
+            <li><a href="/forums"></a>Forums</li>
           </ol>
         </div>
       </nav>
@@ -83,21 +82,24 @@
 
         <div class="gy-4 posts-list mb-5" id="forum_list"></div>
 
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Create New Topic</h5>
-            <form id="formCreateForum" action="javascript:void(0);" method="post">
-              <div class="mb-3">
-                <label for="topicTitle" class="form-label">Title</label>
-                <input type="text" class="form-control" id="topicTitle">
-              </div>
-              <div class="mb-3">
-                <label for="topicContent" class="form-label">Content</label>
-                <textarea class="form-control" id="topicContent" rows="3"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Create</button>
-            </form>
-          </div>
+        <div class="gy-4 posts-list mb-5">
+          <article>
+            <div class="card-body">
+              <h5 class="title">Create New Topic</h5>
+              <form id="formCreateForum" action="javascript:void(0);" method="post">
+                <div class="mb-3">
+                  <label for="topicTitle" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="topicTitle">
+                </div>
+                <div class="mb-3">
+                  <label for="topicContent" class="form-label">Content</label>
+                  <textarea class="form-control" id="topicContent" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+              </form>
+            </div>
+          </article>
+        </div>
 
       </div>
     </section>
