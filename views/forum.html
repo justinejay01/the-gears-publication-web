@@ -167,6 +167,13 @@
   <script src="/assets/js/main.js"></script>
 
   <script>
+    fetch("/auth/check")
+      .then((res) => res.text())
+      .then((text) => {
+        if (text != "0") {
+          document.getElementById("auth").innerHTML = text;
+        }
+      });
     fetch("/get_forums")
       .then((res) => res.json())
       .then((json) => {

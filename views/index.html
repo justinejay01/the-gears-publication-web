@@ -276,9 +276,7 @@
       .then((res) => res.text())
       .then((text) => {
         if (text != "0") {
-          document.getElementById("auth").innerHTML = "";
-        } else {
-
+          document.getElementById("auth").innerHTML = text;
         }
       });
   </script>

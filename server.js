@@ -82,8 +82,8 @@ router.get("/get_news_article", (req, res) => {
     if (err) throw err;
     connection.query(
       "SELECT news_title, news_author, news_desc FROM news_articles WHERE news_id = '" +
-        req.query.id +
-        "'",
+      req.query.id +
+      "'",
       (error, results, fields) => {
         var jsonResults = JSON.stringify(results);
         res.send(jsonResults);
@@ -94,14 +94,14 @@ router.get("/get_news_article", (req, res) => {
   });
 });
 
-router.get("/get_forum_content", (req, res)=> {
+router.get("/get_forum_content", (req, res) => {
   var id = req.query.id;
   con.getConnection((err, connection) => {
     if (err) throw err;
     connection.query(
       "SELECT forum_title, forum_author, forum_cont FROM forum WHERE forum_id = '" +
-        id +
-        "'",
+      id +
+      "'",
       (error, results, fields) => {
         var jsonResults = JSON.stringify(results);
         res.send(jsonResults);
@@ -124,6 +124,8 @@ router.get("/forum/:id?", (req, res) => {
     authCheck(req, res, "/views/forum_content.html", false);
   }
 });
+
+//Authentication
 
 router.get("/auth", (req, res) => {
   //if (req.session.loggedin) res.redirect("/");
@@ -327,6 +329,28 @@ router.get("/auth/logout", (req, res) => {
     console.log(uname + ": Logout");
   });
   res.redirect("/");
+});
+
+// Profile
+router.get("/profile", (req, res) => {
+  res.sendFile(path.join(__dirname + "/views/profile.html"));
+});
+
+router.get("/get_profile", (req, res) => {
+  var uname = req.session.username;
+  con.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "SELECT user_fname AS fname, user_lname AS lname, user_uname AS uname, user_email AS email FROM auth WHERE user_uname = ?",
+      [uname],
+      (error, results, fields) => {
+        var jsonResults = JSON.stringify(results);
+        res.send(jsonResults);
+        connection.release();
+        if (error) throw error;
+      }
+    );
+  });
 });
 
 async function sendResetCode(email, code) {
