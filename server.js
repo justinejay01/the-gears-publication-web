@@ -353,6 +353,42 @@ router.get("/get_profile", (req, res) => {
   });
 });
 
+router.post("/edit_profile", (req, res) => {
+  var uname = req.session.username;
+  var fname = req.query.fname;
+  var lname = req.query.lname;
+  var email = req.query.email;
+
+  con.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "UPDATE auth SET user_fname = ?, user_lname = ?, user_email = ? WHERE user_uname = ?",
+      [fname, lname, email, uname],
+      (error, results, fields) => {
+        res.send("1");
+        connection.release();
+        if (error) throw error;
+      }
+    );
+  });
+});
+
+router.post("/delete_profile", (req, res) => {
+  var uname = req.session.username;
+  con.getConnection((err, connection) => {
+    if (err) throw err;
+    connection.query(
+      "DELETE FROM auth WHERE user_uname = ?",
+      [uname],
+      (error, results, fields) => {
+        res.send("1");
+        connection.release();
+        if (error) throw error;
+      }
+    );
+  });
+});
+
 async function sendResetCode(email, code) {
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
