@@ -535,7 +535,7 @@ section {
     font-size: 15px;
     text-transform: none;
     font-weight: 600;
-    color: #006a5d;
+    color: #fff;
   }
 
   .navbar .dropdown ul a i {
@@ -545,7 +545,7 @@ section {
   .navbar .dropdown ul a:hover,
   .navbar .dropdown ul .active:hover,
   .navbar .dropdown ul li:hover>a {
-    color: var(--color-secondary);
+    color: #F5AA4F;
   }
 
   .navbar .dropdown:hover>ul {

@@ -13,6 +13,12 @@ const app = express();
 
 const port = process.env.port || 3000;
 
+app.use("/assets", express.static(path.join(__dirname, "public")));
+app.use(parser.json());
+app.use(parser.urlencoded({ extended: true }));
+
+// MySQL Connection
+
 var con = mysql.createPool({
   host: "localhost",
   user: "root",
@@ -20,9 +26,7 @@ var con = mysql.createPool({
   database: "the_gears_publication",
 });
 
-app.use("/assets", express.static(path.join(__dirname, "public")));
-app.use(parser.json());
-app.use(parser.urlencoded({ extended: true }));
+// Cookies
 
 app.use(
   session({
@@ -36,9 +40,13 @@ app.use(
   })
 );
 
+// Home
+
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/views/index.html"));
 });
+
+// News
 
 router.get("/news/:id?", (req, res) => {
   const id = req.params.id;
@@ -62,11 +70,13 @@ router.get("/get_news", (req, res) => {
   });
 });
 
-router.get("/get_forums", (req, res) => {
+router.get("/get_news_article", (req, res) => {
   con.getConnection((err, connection) => {
     if (err) throw err;
     connection.query(
-      "SELECT forum_id, forum_title, forum_cont FROM forum;",
+      "SELECT news_title, news_author, news_desc FROM news_articles WHERE news_id = '" +
+      req.query.id +
+      "'",
       (error, results, fields) => {
         var jsonResults = JSON.stringify(results);
         res.send(jsonResults);
@@ -77,13 +87,26 @@ router.get("/get_forums", (req, res) => {
   });
 });
 
-router.get("/get_news_article", (req, res) => {
+// Forums
+
+router.get("/forums", (req, res) => {
+  authCheck(req, res, "/views/forum.html", false);
+});
+
+router.get("/forum/:id?", (req, res) => {
+  const id = req.params.id;
+
+  if (id === undefined) res.redirect("/forums");
+  else {
+    authCheck(req, res, "/views/forum_content.html", false);
+  }
+});
+
+router.get("/get_forums", (req, res) => {
   con.getConnection((err, connection) => {
     if (err) throw err;
     connection.query(
-      "SELECT news_title, news_author, news_desc FROM news_articles WHERE news_id = '" +
-      req.query.id +
-      "'",
+      "SELECT forum_id, forum_title, forum_cont FROM forum;",
       (error, results, fields) => {
         var jsonResults = JSON.stringify(results);
         res.send(jsonResults);
@@ -112,20 +135,7 @@ router.get("/get_forum_content", (req, res) => {
   });
 });
 
-router.get("/forums", (req, res) => {
-  authCheck(req, res, "/views/forum.html", false);
-});
-
-router.get("/forum/:id?", (req, res) => {
-  const id = req.params.id;
-
-  if (id === undefined) res.redirect("/forums");
-  else {
-    authCheck(req, res, "/views/forum_content.html", false);
-  }
-});
-
-//Authentication
+// Authentication
 
 router.get("/auth", (req, res) => {
   //if (req.session.loggedin) res.redirect("/");
@@ -332,6 +342,7 @@ router.get("/auth/logout", (req, res) => {
 });
 
 // Profile
+
 router.get("/profile", (req, res) => {
   res.sendFile(path.join(__dirname + "/views/profile.html"));
 });
@@ -418,7 +429,15 @@ function authCheck(req, res, v, isAuth) {
   }
 }
 
+// Contact
+router.get("/contact", (req, res) => {
+  res.sendFile(path.join(__dirname + "/views/contact.html"));
+});
+
+
 app.use("/", router);
+
+// Listen Port
 
 app.listen(port, () => {
   console.log("Running on port " + port);

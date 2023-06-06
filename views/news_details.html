@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Gears Publication - News</title>
+  <title>The Gears Publication - News Details</title>
   <link href="/assets/img/favicon.png" rel="icon" />
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
@@ -46,11 +46,9 @@
       </a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#hero">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="/news">News</a></li>
-          <li><a href="/events">Events</a></li>
           <li><a href="/forum">Forum</a></li>
-          <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
           <li id="auth"><a href="/auth">Log In / Register</a></li>
         </ul>
@@ -128,11 +126,9 @@
         <div class="col-lg-3 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#hero">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/news">News</a></li>
-            <li><a href="/events">Events</a></li>
             <li><a href="/forum">Forum</a></li>
-            <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -179,7 +175,12 @@
       .then((res) => res.text())
       .then((text) => {
         if (text != "0") {
-          document.getElementById("auth").innerHTML = text;
+          document.getElementById("auth").innerHTML = '<li class="dropdown"><a href="/profile"><span>' + text + '</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>'
+            + '<ul>'
+              + '<li><a href="/profile">Profile</a></li>'
+              + '<li><a href="/auth/logout">Log Out</a></li>'
+            + '</ul>'
+          + '</li>';
         }
       });
     fetch("/get_news_article?id=" + document.URL.split('/')[4])
