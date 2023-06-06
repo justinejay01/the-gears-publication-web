@@ -135,6 +135,26 @@ router.get("/get_forum_content", (req, res) => {
   });
 });
 
+router.post("/create_forum", (req, res) => {
+ var title = req.body.title;
+ var cont = req.body.cont;
+ var uname = req.session.username;
+ let currentDate = new Date().toJSON().slice(0, 10);
+
+ con.getConnection((err, connection) => {
+  if (err) throw err;
+  connection.query(
+    "INSERT INTO forum (forum_title, forum_cont, forum_author, forum_date) VALUES (?, ?, ?, ?)",
+    [title, cont, uname, currentDate],
+    (error, results, fields) => {
+      res.send("1");
+      connection.release();
+      if (error) throw error;
+    }
+  );
+});
+});
+
 // Authentication
 
 router.get("/auth", (req, res) => {

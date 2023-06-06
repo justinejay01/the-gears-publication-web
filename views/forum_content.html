@@ -90,8 +90,6 @@
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i>
                     <div id="c_forum_author"></div>
                   </li>
-                  <li class="d-flex align-items-center d-none"><i class="bi bi-clock"></i> <a
-                      href="blog-details.html"><time datetime="2020-01-01">Jan 1, 2022</time></a></li>
                 </ul>
               </div><!-- End meta top -->
 
@@ -101,6 +99,42 @@
 
           </div>
 
+          <div class="comments">
+
+            <h4 class="comments-count">Comments</h4>
+
+            <div class="gy-4 posts-list mb-3">
+              <article>
+                <div class="">
+                  <div class="d-flex">
+                    <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
+                    <div>
+                      <h4><strong>Anonymous</strong></h4>
+                      <p>
+                        This is comment from Anonymous user.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="gy-4 posts-list">
+              <article>
+                <div class="card-body">
+                  <h5 class="title">New Comment</h5>
+                  <form id="formContact" action="javascript:void(0);" method="post">
+                    <div class="mb-3">
+                      <label for="contactMsg" class="form-label">Comment</label>
+                      <textarea class="form-control" id="contactMsg" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Comment</button>
+                  </form>
+                </div>
+              </article>
+            </div>
+
+          </div>
 
         </div>
       </div>

@@ -2600,12 +2600,12 @@ section {
 }
 
 .blog .comments .comment h5 a:hover {
-  color: var(--color-primary);
+  color: #7A0801;
 }
 
 .blog .comments .comment h5 .reply {
   padding-left: 10px;
-  color: var(--color-primary);
+  color: #F5941F;
 }
 
 .blog .comments .comment h5 .reply i {

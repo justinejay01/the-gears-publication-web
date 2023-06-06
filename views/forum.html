@@ -80,18 +80,18 @@
 
         <div class="gy-4 posts-list mb-5" id="forum_list"></div>
 
-        <div class="gy-4 posts-list mb-5">
+        <div class="gy-4 posts-list">
           <article>
             <div class="card-body">
               <h5 class="title">Create New Topic</h5>
               <form id="formCreateForum" action="javascript:void(0);" method="post">
                 <div class="mb-3">
                   <label for="topicTitle" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="topicTitle">
+                  <input type="text" class="form-control" id="topicTitle" required>
                 </div>
                 <div class="mb-3">
                   <label for="topicContent" class="form-label">Content</label>
-                  <textarea class="form-control" id="topicContent" rows="3"></textarea>
+                  <textarea class="form-control" id="topicContent" rows="3" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
               </form>
@@ -161,8 +161,8 @@
   <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="/assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/forum.js"></script>
 
   <script>
     fetch("/auth/check")
@@ -185,7 +185,7 @@
         let article = '';
         for (var i = 0; i < forum.length; ++i) {
           article +=
-            '<article> <h2 class="title"> <a href="/forum/' + forum[i].forum_id + '" >' +
+            '<article class="mb-3"> <h2 class="title"> <a href="/forum/' + forum[i].forum_id + '" >' +
             forum[i].forum_title +
             "</a> </h2> <p>" + forum[i].forum_cont + "</p> </article>";
         }
